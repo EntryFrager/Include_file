@@ -9,14 +9,14 @@
 
 #include "error.h"
 
-#define compare(first_value, second_value) compare_number (first_value, second_value, code_error)
+#define compare(first_value, second_value) compare_number(first_value, second_value, code_error)
 
 #define FOPEN_(fp, fp_name, mode)               \
-    FILE *fp = fopen (fp_name, mode);           \
-    my_assert (fp != NULL, ERR_FOPEN);
+    FILE *fp = fopen(fp_name, mode);            \
+    my_assert(fp != NULL, ERR_FOPEN);
 
 #define FCLOSE_(fp)                             \
-    my_assert (fclose (fp) == 0, ERR_FCLOSE);
+    my_assert(fclose (fp) == 0, ERR_FCLOSE);
 
 const double EPSILON = 1e-10;
 
