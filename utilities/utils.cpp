@@ -9,7 +9,6 @@ char *get_file_to_str (FILE *stream, size_t *size_file, int *code_error)
     my_assert(size_file != NULL, ERR_PTR);
 
     *size_file = get_file_size(stream, code_error);
-    ERR_RET(NULL);
 
     char *buf = (char *) calloc(*size_file + 1, sizeof (char));
     my_assert(buf != NULL, ERR_MEM);
@@ -18,6 +17,8 @@ char *get_file_to_str (FILE *stream, size_t *size_file, int *code_error)
     my_assert(read_size == *size_file, ERR_FREAD);
 
     buf[*size_file] = '\0';
+
+    ERR_RET(NULL);
 
     return buf;
 }
@@ -63,6 +64,8 @@ char *get_str (FILE *stream, int *code_error)
     str = (char *) realloc(str, len);
     my_assert(str != NULL, ERR_MEM);
 
+    ERR_RET(NULL);
+
     return str;
 }
 
@@ -107,6 +110,8 @@ char *skip_isspace (char *str, size_t len_str, int *code_error)
 
     free(str);
 
+    ERR_RET(NULL);
+
     return new_str;
 }
 
@@ -116,6 +121,7 @@ char *read_ident (char **str, int *code_error)
 
     char *new_str = (char *) calloc(strlen (*str), sizeof (char));
     my_assert(new_str != NULL, ERR_MEM);
+
     size_t pos = 0;
 
     while (isalpha(**str) || **str == '_')
@@ -128,6 +134,8 @@ char *read_ident (char **str, int *code_error)
     my_assert(new_str != NULL, ERR_MEM);
 
     new_str[pos] = '\0';
+
+    ERR_RET(NULL);
 
     return new_str;
 }
