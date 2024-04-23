@@ -13,6 +13,8 @@ DEF_ERR("an error occurred while closing the file")
 
 DEF_ERR("an error occurred while reading text from the file")
 
+DEF_ERR("error when executing system command")
+
 DEF_ERR("division by zero")
 
 DEF_ERR("root of a negative number")
