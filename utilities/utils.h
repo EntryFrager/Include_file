@@ -16,6 +16,10 @@
     FILE *fp = fopen(fp_name, mode);            \
     my_assert(fp != NULL, ERR_FOPEN);
 
+#define fopen_init_(fp, fp_name, mode)          \
+    fp = fopen(fp_name, mode);                  \
+    my_assert(fp != NULL, ERR_FOPEN);
+
 #define fclose_(fp)                             \
     my_assert(fclose(fp) == 0, ERR_FCLOSE);
 

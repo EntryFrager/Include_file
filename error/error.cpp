@@ -11,7 +11,7 @@ static const char *err_msgs_arr[] = {
 
 #undef DEF_ERR
 
-void my_strerr (unsigned code_error, FILE *stream)
+void my_strerr (const unsigned code_error, FILE *stream)
 {
     for (int i = 0; i < ERR_CNT; i++)
     {

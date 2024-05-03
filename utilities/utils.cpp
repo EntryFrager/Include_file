@@ -119,7 +119,7 @@ char *read_ident (char **str, int *code_error)
 
     size_t pos = 0;
 
-    while (isalpha(**str) || **str == '_')
+    while (isalpha(**str) || **str == '_' || isdigit(**str))
     {
         new_str[pos++] = **str;
         (*str)++;
