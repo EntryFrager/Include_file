@@ -41,8 +41,17 @@ enum code_error {
 
     NODE_ERR          = 1 << 16,
     NODE_DATA_ERR_PTR = 1 << 17,
+    NODE_TYPE         = 1 << 18,
 
-    ERR_CNT           = 18
+    ERR_ARGC          = 1 << 19,
+    ERR_LABEL         = 1 << 20,
+    ERR_RAM           = 1 << 21,
+    ERR_REG           = 1 << 22,
+    ERR_COMMAND       = 1 << 23,
+    ERR_INPUT_ARG     = 1 << 24,
+    ERR_BUF_IP        = 1 << 25,
+
+    ERR_CNT           = 26
 };
 
 void my_strerr (const unsigned code_error, FILE *stream);
