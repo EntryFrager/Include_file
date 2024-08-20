@@ -5,6 +5,13 @@
 
 static const int COEF_REALLOC_UP = 2;
 
+bool is_zero (const double value, int *code_error)
+{
+    my_assert(isfinite(value), ERR_NAN);
+
+    return (fabs(value) < EPSILON);
+}
+
 char *get_file_to_str (FILE *stream, size_t *size_file, int *code_error)
 {
     my_assert(stream != NULL, ERR_PTR);
@@ -136,8 +143,8 @@ char *read_ident (char **str, int *code_error)
 
 int compare_number (const double value_1, const double value_2, int *code_error)
 {
-    my_assert(isfinite (value_1), ERR_NAN);
-    my_assert(isfinite (value_2), ERR_NAN);
+    my_assert(isfinite(value_1), ERR_NAN);
+    my_assert(isfinite(value_2), ERR_NAN);
 
     if ((value_1 - value_2) > EPSILON)
     {

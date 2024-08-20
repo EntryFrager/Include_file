@@ -61,6 +61,8 @@
 
 const double EPSILON = 1e-10;
 
+bool is_zero (const double value, int *code_error);
+
 char *get_file_to_str (FILE *stream, size_t *size_file, int *code_error);
 
 size_t get_file_size (FILE *stream, int *code_error);
